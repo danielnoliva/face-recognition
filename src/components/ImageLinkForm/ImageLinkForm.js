@@ -1,7 +1,8 @@
 import React from "react";
-import "./ImageLinkForm.css"
+import "./ImageLinkForm.css";
 
-function ImageLinkForm() {
+function ImageLinkForm(props) {
+  const { onInputChange, onUrlSubmit } = props;
   return (
     <div>
       <p className="f3 white">
@@ -14,8 +15,13 @@ function ImageLinkForm() {
             type="text"
             name="file"
             id="file"
+            onChange={onInputChange}
           />
-          <button className="w-30 grow f4 link ph3 pv2 dib white bg-navy">
+          <button
+            className="w-30 grow f4 link ph3 pv2 dib white bg-navy"
+            type="submit"
+            onClick={onUrlSubmit}
+          >
             Detect
           </button>
         </div>
